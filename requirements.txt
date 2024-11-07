@@ -1,0 +1,6 @@
+torch @ https://download.pytorch.org/whl/cpu/torch-1.11.0%2Bcpu-cp310-cp310-linux_x86_64.whl#sha256=32fa00d974707c0183bc4dd0c1d69e853d0f15cc60f157b71ac5718847808943
+qiskit==0.36.2
+qiskit_dynamics==0.2.1
+tensorboard==2.0.0
+PyYAML==6.0
+optuna==2.10.1

@@ -1,0 +1,25 @@
+classifier: singlestatic
+transformation: paulix
+target qubit: 0
+multiprocessing: true
+qubit frequencies: [4.97185285241]  # Qubit excitation frequency in GHz
+time sampling rate: 0.2222222222222222  # Time sampling of quantum device in ns
+extra args:
+  control_qubits: [0]
+rabi rate strengths: [0.8988580541322783]  # in GHz
+qubit couplings: {}
+pulse array: [1]
+batch size: 1
+training points: 10
+validation points: 10
+epochs: 100
+cyclic learning rate: True
+max learning rate: 0.01
+min learning rate: 0.001
+initial parameters:
+  moduli: [[0.82]]
+  argument: [[0]]
+  sigma: [[80]]
+  duration: [[71.1111]]  # in ns
+  phase: [[1.57]]
+  beta: [[0.7]]

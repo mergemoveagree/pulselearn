@@ -1,0 +1,34 @@
+name: Linting
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-check:
+    runs-on:  ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Install library requirements
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Install linters
+        run: |
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --max-line-length=100 --statistics --show-source
+      - name: Lint with pyright 
+        uses: jakebailey/pyright-action@v1
+        with:
+          lib: true
+          python-version: "3.10"
